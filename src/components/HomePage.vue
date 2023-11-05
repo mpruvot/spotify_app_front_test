@@ -26,7 +26,7 @@ export default {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: #f5f5f5;
+  background: #ffffff;
   color: #333;
   text-align: center;
   font-family: 'Poppins', sans-serif;
@@ -58,7 +58,7 @@ h1 {
   font-size: 1.25rem;
   font-weight: 400;
   background-color: #1db954;
-  color: #fff;
+  color: #ffffff;
   border: none;
   border-radius: 50px;
   cursor: pointer;

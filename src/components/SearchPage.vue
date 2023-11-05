@@ -20,7 +20,9 @@
           <div class="result-item" v-if="searchResults.id">
             <h2>{{ searchResults.name }}</h2>
             <p>Genres: {{ searchResults.genres.join(', ') }}</p>
-            <a :href="searchResults.external_urls.spotify" target="_blank" class="spotify-link">Écouter sur Spotify</a>
+
+
+            <a :href="searchResults.external_urls.spotify" target="_blank" class="enter-button">Écouter sur Spotify</a>
           </div>
         </template>
         <!-- Résultats pour un album -->
@@ -30,7 +32,7 @@
             <p>Artiste: {{ searchResults.artists[0].name }}</p>
             <p>Date de sortie: {{ searchResults.release_date }}</p>
             <p>Nombre de pistes: {{ searchResults.total_tracks }}</p>
-            <a :href="searchResults.artists[0].external_urls.spotify" target="_blank" class="spotify-link">Écouter sur Spotify</a>
+            <a :href="searchResults.artists[0].external_urls.spotify" target="_blank" class="enter-button">Écouter sur Spotify</a>
           </div>
         </template>
         <!-- Résultats pour une piste -->
@@ -39,7 +41,7 @@
             <h2>{{ searchResults.name }}</h2>
             <p>Album: {{ searchResults.album.name }}</p>
             <p>Artiste: {{ searchResults.artists[0].name }}</p>
-            <a :href="searchResults.external_urls.spotify" target="_blank" class="spotify-link">Écouter sur Spotify</a>
+            <a :href="searchResults.external_urls.spotify" target="_blank" class="enter-button">Écouter sur Spotify</a>
           </div>
         </template>
         <!-- Résultats pour une playlist -->
@@ -47,7 +49,7 @@
           <div class="result-item" v-if="searchResults.id">
             <h2>{{ searchResults.name }}</h2>
             <p v-html="searchResults.description"></p>
-            <a :href="searchResults.external_urls.spotify" target="_blank" class="spotify-link">Écouter sur Spotify</a>
+            <a :href="searchResults.external_urls.spotify" target="_blank" class="enter-button">Écouter sur Spotify</a>
           </div>
         </template>
       </div>
@@ -84,6 +86,29 @@ export default {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+/* Styles pour le bouton "Écouter sur Spotify" */
+.enter-button {
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  font-weight: 400;
+  background-color: #1db954;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-decoration: none; /* Supprime le soulignement des liens */
+  display: inline-block; /* Permet d'appliquer le padding et d'autres styles de boîte */
+}
+
+.enter-button:hover {
+  background-color: #1ed760;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
 
 .search-page {
   display: flex;
@@ -180,4 +205,3 @@ h1 {
   }
 }
 </style>
-
